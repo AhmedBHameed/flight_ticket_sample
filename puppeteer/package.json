@@ -1,0 +1,37 @@
+{
+  "name": "generate_flight_ticket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"node esbuild.config.js\" \"nodemon --watch dist dist/index.js\"",
+    "docker:start": "NODE_ENV=production node esbuild.config.js && node dist/index.js",
+    "build": "esbuild src/app.ts --platform=node --bundle --minify --outfile=dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "form-data": "^4.0.0",
+    "handlebars": "^4.7.7",
+    "helmet": "^5.0.2",
+    "puppeteer": "^13.5.2",
+    "sanitize-html": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.23",
+    "concurrently": "^7.1.0",
+    "date-fns": "^2.28.0",
+    "dotenv-safe": "^8.2.0",
+    "esbuild": "^0.14.36",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "reflect-metadata": "^0.1.13"
+  }
+}
